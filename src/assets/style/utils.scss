@@ -1,0 +1,19 @@
+@mixin flex-box($align-items: center, $justify-content: center, $flex-direction: row) {
+  display: flex;
+  align-items: $align-items;
+  justify-content: $justify-content;
+  flex-direction: $flex-direction;
+}
+@function px2rem($px) {
+  @if (unitless($px)) {
+    @return px2rem($px + 0px);
+  } @else if (unit($px) ==rem) {
+    @return $px;
+  }
+  @return ($px / 75px) * 2rem;
+}
+.bg {
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  background-position: center;
+}
